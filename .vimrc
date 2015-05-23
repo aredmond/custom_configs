@@ -1,4 +1,11 @@
-syntax enable " Turn on syntax highlighting  
-set hidden " Leave hidden buffers open  
-set history=100
-set bg=dark " For working with dark backgrong
+set runtimepath+=~/.vim_runtime
+
+source ~/.vim_runtime/vimrcs/basic.vim
+source ~/.vim_runtime/vimrcs/filetypes.vim
+source ~/.vim_runtime/vimrcs/plugins_config.vim
+source ~/.vim_runtime/vimrcs/extended.vim
+
+try
+source ~/.vim_runtime/my_configs.vim
+catch
+endtry
