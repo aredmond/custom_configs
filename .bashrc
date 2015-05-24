@@ -46,10 +46,6 @@ if [ -f /etc/bashrc ]; then
 fi
 
 
-#----------------------------------------------------------
-$TERM = xterm-256color
-export TERM
-
 #--------------------------------------------------------------
 #  Automatic setting of $DISPLAY (if not set already).
 #  This works for me - your mileage may vary. . . .
