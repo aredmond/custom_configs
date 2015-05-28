@@ -893,7 +893,19 @@ _make()
 
 complete -F _make -X '+($*|*.[cho])' make gmake pmake
 
+####Custom alaises
+#######################################
 
+#git
+alias gitadd='git add --all .'
+alias gitcom='git commit'
+alias gpom='git push origin master'
+
+#knife
+alias kncb='knife cookbook'
+
+####Custom variables
+#####################################
 
 
 _killall()
