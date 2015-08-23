@@ -45,7 +45,6 @@ if [ -f /etc/bashrc ]; then
       . /etc/bashrc   # --> Read /etc/bashrc, if present.
 fi
 
-
 #--------------------------------------------------------------
 #  Automatic setting of $DISPLAY (if not set already).
 #  This works for me - your mileage may vary. . . .
@@ -357,7 +356,7 @@ alias libpath='echo -e ${LD_LIBRARY_PATH//:/\\n}'
 alias du='du -kh'    # Makes a more readable output.
 alias df='df -kTh'
 
-#-------------------------------------------------------------
+#--------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls).
 #-------------------------------------------------------------
 # Add colors for filetype and  human-readable sizes by default on 'ls':
@@ -372,7 +371,7 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 alias ll="ls -lv --group-directories-first"
 alias lm='ll |more'        #  Pipe through 'more'
 alias lr='ll -R'           #  Recursive ls.
-alias la='ll -A'           #  Show hidden files.
+alias la='ll -a'           #  Show hidden files.
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
 
@@ -408,6 +407,13 @@ alias moer='more'
 alias moew='more'
 alias kk='ll'
 
+
+####
+####
+####Include ~/.bash_aliases file if its there
+if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases
+fi
 
 #-------------------------------------------------------------
 # A few fun ones
@@ -893,19 +899,7 @@ _make()
 
 complete -F _make -X '+($*|*.[cho])' make gmake pmake
 
-####Custom alaises
-#######################################
 
-#git
-alias gitadd='git add --all .'
-alias gitcom='git commit'
-alias gpom='git push origin master'
-
-#knife
-alias kncb='knife cookbook'
-
-####Custom variables
-#####################################
 
 
 _killall()
@@ -927,7 +921,7 @@ _killall()
 
 complete -F _killall killall killps
 
-
+export EDITOR=$'vim'
 
 # Local Variables:
 # mode:shell-script
